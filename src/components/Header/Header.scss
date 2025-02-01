@@ -1,0 +1,41 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.header {
+  background-color: $primary-color;
+  padding: 1rem;
+
+  &__nav {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $white;
+    text-decoration: none;
+  }
+
+  &__button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+
+    &--login {
+      background-color: $accent-color;
+      color: $white;
+    }
+
+    &--logout {
+      background-color: $danger-color;
+      color: $white;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
+
