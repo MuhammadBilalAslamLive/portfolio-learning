@@ -4,35 +4,19 @@ import Login from "./components/Login/Login.js"
 import Signup from "./components/Signup/Signup.js"
 import Portfolio from "./components/Portfolio/Portfolio.js"
 import styles from "./App.module.css"
+import Props from "./Props/Props.js"
 
-function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [showLogin, setShowLogin] = useState(true)
+function App() { 
 
-  const handleLogin = () => {
-    setIsLoggedIn(true)
-  }
-
-  const handleLogout = () => {
-    setIsLoggedIn(false)
-  }
-
-  const toggleAuthForm = () => {
-    setShowLogin(!showLogin)
+  const userDetails = {
+    username: "Mohsin",
+    email: "mohsin@gmail.com",
+    address: "Australia"
   }
 
   return (
     <div className={styles.app}>
-      <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />
-      {!isLoggedIn ? (
-        showLogin ? (
-          <Login onLogin={handleLogin} onToggle={toggleAuthForm} />
-        ) : (
-          <Signup onSignup={handleLogin} onToggle={toggleAuthForm} />
-        )
-      ) : (
-        <Portfolio />
-      )}
+      <Props userDetails = {userDetails} />
     </div>
   )
 }
