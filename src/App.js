@@ -5,6 +5,7 @@ import Signup from "./components/Signup/Signup.js"
 import Portfolio from "./components/Portfolio/Portfolio.js"
 import styles from "./App.module.css"
 import Props from "./Props/Props.js"
+import { UserProvider } from "./components/provider/UserProvider.js";
 
 function App() { 
 
@@ -16,7 +17,9 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <Props userDetails = {userDetails} />
+      <UserProvider>
+       <Props/>
+      </UserProvider>
     </div>
   )
 }
