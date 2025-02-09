@@ -10,7 +10,7 @@ import { UserProvider } from "./components/provider/UserProvider.js";
 function App() { 
 
   const userDetails = {
-    username: "Mohsin",
+    username: "Bilal",
     email: "mohsin@gmail.com",
     address: "Australia"
   }
